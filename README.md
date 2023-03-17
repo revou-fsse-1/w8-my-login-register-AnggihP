@@ -8,4 +8,4 @@ This is my assignment of week 8 - RevoU FSSE Madrid 2023
 
 ## Preview
 
-![loginpage](asset/page1.jpg)
+![loginpage](asset/page1.JPG)
