@@ -19,7 +19,7 @@ function regTabFun() {
   loginTab.style.backgroundColor = "rgba(11, 177, 224, 0.82)";
 }
 function loginTabFun() {
-  evt.preventDefault();
+  event.preventDefault();
 
   regBox.style.visibility = "hidden";
   loginBox.style.visibility = "visible";
@@ -29,7 +29,7 @@ function loginTabFun() {
   regTab.style.backgroundColor = "rgba(11, 177, 224, 0.82)";
 }
 function forTabFun() {
-  evt.preventDefault();
+  event.preventDefault();
 
   regBox.style.visibility = "hidden";
   loginBox.style.visibility = "hidden";
