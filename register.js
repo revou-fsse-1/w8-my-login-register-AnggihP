@@ -46,12 +46,23 @@ function register() {
   var password = document.getElementById("rp").value;
   var passwordRetype = document.getElementById("rrp").value;
 
+  const validateLowerCase = /[a-z]/;
+  const validateUpperCase = /^[A-Z][A-Za-z0-9]{1,11}$/;
+  const validateNumber = /[0-9]/;
+  const myRegex = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z.]{2,5}$/;
+
   if (email == "") {
     alert("Email required.");
     return;
+  } else if (!myRegex.test(email)) {
+    alert("Please input valid email");
   } else if (password == "") {
     alert("Password required.");
     return;
+  } else if (!validateUpperCase.test(password)) {
+    alert(
+      "Please input password with min 1 Upper case"
+    );
   } else if (passwordRetype == "") {
     alert("Password required.");
     return;
@@ -69,7 +80,9 @@ function register() {
     document.getElementById("rrp").value = "";
   } else {
     alert(email + " is already register.");
-    return;
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+    window.location.href = "index.html";
   }
 }
 function login() {
@@ -96,10 +109,9 @@ function login() {
     return;
   } else {
     alert(email + " yor are login Now \n welcome to our website.");
-
-    document.getElementById("se").value = "";
-    document.getElementById("sp").value = "";
-    return;
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+    window.location.href = "homepage.html";
   }
 }
 function forgot() {
